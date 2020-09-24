@@ -46,9 +46,14 @@ convertBtn.addEventListener('click', () => {
 });
 
 function sendURL(URL) {
-    if(!URL.startsWith('https://youtu.be/') || !URL.startsWith('http://youtu.be/')) return;
+    if(!URL.startsWith('https://youtu.be/') || !URL.startsWith('http://youtu.be/')) return myFunction();
     window.location.href = `https://yt-downlower.herokuapp.com/download?URL=${URL}`;
 }
+
+function myFunction() {
+  alert("Hello! I am an alert box!");
+}
+
 </script>
 </body>
 </html>
