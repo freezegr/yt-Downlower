@@ -8,7 +8,7 @@ app.use(express.static(__dirname));
 
 app.set('view engine', 'ejs')
 const port = process.env.PORT || 8080;
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log('Server is ready!');
 });
 
