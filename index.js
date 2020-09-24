@@ -21,9 +21,17 @@ app.get('/download', (req,res) => {
   var type = req.query.type;
   console.log(type)
   console.log(URL)
-  res.header('Content-Disposition', 'attachment; filename="video.mp3"');
-    /*ytdl(URL, {
+ 
+  if(type == 'mp3'){
+    res.header('Content-Disposition', 'attachment; filename="video.mp3"');
+    ytdl(URL, {
       format: 'mp3',
       filter: 'audioonly'
-    }).pipe(res);*/
+    }).pipe(res);
+  }else {
+    res.header('Content-Disposition', 'attachment; filename="video.mp4"');
+    ytdl(URL, {
+      form: 'mp4'
+    }).pipe(res)
+  }
 });
