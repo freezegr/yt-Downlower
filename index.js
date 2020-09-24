@@ -34,7 +34,7 @@ app.get('/download', async (req,res) => {
     }).pipe(res);
   }else {
     let mp4Title = `${info.title}.mp4`
-    res.header('Content-Disposition', `attachment; filename=${mp4Title}`);
+    res.header('Content-Disposition', contentDisposition(mp4Title));
     ytdl(URL, {
       form: 'mp4'
     }).pipe(res)
