@@ -46,12 +46,14 @@ convertBtn.addEventListener('click', () => {
 });
 
 function sendURL(URL) {
-    if(!URL.startsWith('https://youtu.be/') || !URL.startsWith('http://youtu.be/')) return myFunction();
+
+    if(!URL.startsWith('https://youtu.be/') || !URL.startsWith('http://youtu.be/')) return (()=>{alert("Warning: This unbaled youtube url!"+URL);}
     window.location.href = `https://yt-downlower.herokuapp.com/download?URL=${URL}`;
 }
 
 function myFunction(URL) {
-  alert("Warning: This unbaled youtube url!"+URL);
+  //alert("Warning: This unbaled youtube url!"+URL);
+
 }
 
 </script>
