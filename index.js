@@ -30,7 +30,7 @@ app.get('/download', async (req,res) => {
       filter: 'audioonly'
     }).pipe(res);
   }else {
-    res.header('Content-Disposition', 'attachment; filename="`${info.title}.mp4`"');
+    res.header('Content-Disposition', 'attachment; filename=`${info.title}`".mp4"');
     ytdl(URL, {
       form: 'mp4'
     }).pipe(res)
