@@ -4,6 +4,7 @@ const ytdl = require('ytdl-core');
 
 const app = express();
 app.use(cors());
+app.use(express.static(__dirname));
 
 app.set('view engine', 'ejs')
 app.listen(4000, () => {
