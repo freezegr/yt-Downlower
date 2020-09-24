@@ -7,7 +7,8 @@ app.use(cors());
 app.use(express.static(__dirname));
 
 app.set('view engine', 'ejs')
-app.listen(8080, () => {
+const port = process.env.PORT || 8080;
+app.listen(PORT, () => {
   console.log('Server is ready!');
 });
 
