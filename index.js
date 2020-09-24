@@ -24,13 +24,13 @@ app.get('/download', async (req,res) => {
   let info = await ytdl.getInfo(URL);
   console.log(info.title)
   if(type == 'mp3'){
-    res.header('Content-Disposition', 'attachment; filename="video.mp3"');
+    res.header('Content-Disposition', 'attachment; filename="`${info.title}.mp3"`');
     ytdl(URL, {
       format: 'mp3',
       filter: 'audioonly'
     }).pipe(res);
   }else {
-    res.header('Content-Disposition', 'attachment; filename="video.mp4"');
+    res.header('Content-Disposition', 'attachment; filename="`${info.title}.mp4`"');
     ytdl(URL, {
       form: 'mp4'
     }).pipe(res)
