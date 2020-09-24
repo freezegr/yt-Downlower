@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/download', asymc (req,res) => {
+app.get('/download', async (req,res) => {
   var URL = req.query.URL;
   var type = req.query.type;
   console.log(type)
