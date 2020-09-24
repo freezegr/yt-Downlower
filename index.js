@@ -21,7 +21,8 @@ app.get('/download', (req,res) => {
   var type = req.query.type;
   console.log(type)
   console.log(URL)
- 
+  let info = await ytdl.getInfo(URL);
+  console.log(info)
   if(type == 'mp3'){
     res.header('Content-Disposition', 'attachment; filename="video.mp3"');
     ytdl(URL, {
