@@ -21,6 +21,7 @@ app.get('/download', (req,res) => {
   console.log(URL)
   res.header('Content-Disposition', 'attachment; filename="video.mp3"');
     ytdl(URL, {
-      format: 'mp3'
+      format: 'mp3',
+      filter: 'audioonly'
     }).pipe(res);
 });
