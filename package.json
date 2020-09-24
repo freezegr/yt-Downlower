@@ -1,7 +1,6 @@
 {
   "name": "bot",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "cors": "^2.8.5",
@@ -12,5 +11,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stathis7888/yt-Downlower.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stathis7888/yt-Downlower/issues"
+  },
+  "homepage": "https://github.com/stathis7888/yt-Downlower#readme",
+  "description": ""
 }
