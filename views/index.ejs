@@ -46,7 +46,8 @@ convertBtn.addEventListener('click', () => {
 });
 
 function sendURL(URL) {
-    window.location.href = `https://yt-downlower.herokuapp.com/?URL=${URL}`;
+    if(!URL.startsWith('https://youtu.be/') || !URL.startsWith('http://youtu.be/'))
+    window.location.href = `https://yt-downlower.herokuapp.com/download?URL=${URL}`;
 }
 </script>
 </body>
