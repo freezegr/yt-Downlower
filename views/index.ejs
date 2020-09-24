@@ -60,7 +60,7 @@ funcrion typed (){
 function sendURL(URL) {
 
     if(!URL.startsWith('https://youtu.be/') && !URL.startsWith('http://youtu.be/') && !URL.startsWith('http://www.youtube.com/') && !URL.startsWith('https://www.youtube.com/') && !URL.startsWith('http://m.youtube.com/') && !URL.startsWirh('https://m.youtube.com/')) return alert("Warning: This unbaled youtube url!")   
-    window.location.href = `https://yt-music-installer.herokuapp.com/download?URL=${URL}&type=${typed()}`;
+    window.location.href = `https://yt-music-installer.herokuapp.com/download?URL=${URL}&type=mp3`;
 }
 
 function myFunction(URL) {
