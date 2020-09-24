@@ -7,8 +7,8 @@ app.use(cors());
 app.use(express.static(__dirname));
 
 app.set('view engine', 'ejs')
-app.listen(4000, () => {
-  console.log('Server Works !!! At port 4000');
+app.listen(8080, () => {
+  console.log('Server is ready!');
 });
 
 app.get('/', (req, res) => { 
