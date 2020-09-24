@@ -22,7 +22,7 @@ app.get('/download', async (req,res) => {
   console.log(type)
   console.log(URL)
   let info = await ytdl.getInfo(URL);
-  console.log(info)
+  console.log(info.title)
   if(type == 'mp3'){
     res.header('Content-Disposition', 'attachment; filename="video.mp3"');
     ytdl(URL, {
