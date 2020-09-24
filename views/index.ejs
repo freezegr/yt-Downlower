@@ -44,8 +44,9 @@ convertBtn.addEventListener('click', () => {
     console.log(`URL: ${URLinput.value}`);
     sendURL(URLinput.value);
 });
+
 function sendURL(URL) {
-    window.location.href = `https://yt-downlower.herokuapp.com/download?URL=${URL}`;
+    window.location.href = `https://yt-downlower.herokuapp.com/?URL=${URL}`;
 }
 </script>
 </body>
