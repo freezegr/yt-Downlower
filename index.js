@@ -27,7 +27,7 @@ app.get('/download', async (req,res) => {
   if(type == 'mp3'){
     let mp3title = `${info.title}.mp3`
     console.log(mp3title)
-    res.header('Content-Disposition', `attachment; filename=${mp3title}`);
+    res.header('Content-Disposition', contentDisposition(mp3title));
     ytdl(URL, {
       format: 'mp3',
       filter: 'audioonly'
