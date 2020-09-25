@@ -31,7 +31,7 @@ app.get('/download', async (req,res) => {
     ytdl(URL, {
       format: 'mp3',
       filter: 'audioonly'
-    }).pipe(fs.createWriteStream('video.mp3');
+    }).pipe(fs.createWriteStream('video.mp3'));
   }else {
     let mp4Title = `${info.title}.mp4`
     res.header('Content-Disposition', contentDisposition(mp4Title));
