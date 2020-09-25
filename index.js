@@ -34,7 +34,6 @@ app.get('/download', async (req,res) => {
       quality: 'highestaudio',
       filter: 'audioonly'
     }).pipe(fs.createWriteStream('./'+mp3title)).on('close',()=>{
-      setTags('./mp3title');
       console.log("Tags set");
     });
 
