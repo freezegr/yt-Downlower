@@ -43,7 +43,7 @@
 
 <button id="btn">Get Selected Colors</button>
 <script>
-	var convertBtn = document.querySelector('.convert-button');
+var convertBtn = document.querySelector('.convert-button');
 var URLinput = document.querySelector('.URL-input');
 convertBtn.addEventListener('click', () => {
     console.log(`URL: ${URLinput.value}`);
@@ -51,14 +51,22 @@ convertBtn.addEventListener('click', () => {
 });
  
 function sendURL(URL) {
-
-    if(!URL.startsWith('https://youtu.be/') && !URL.startsWith('http://youtu.be/') && !URL.startsWith('http://www.youtube.com/') && !URL.startsWith('https://www.youtube.com/') && !URL.startsWith('http://m.youtube.com/') && !URL.startsWirh('https://m.youtube.com/')) return alert("Warning: This unbaled youtube url!")   
-    window.location.href = `https://yt-music-installer.herokuapp.com/download?URL=${URL}&type=mp3`;
+  if(!URL.startsWith('https://youtu.be/') && !URL.startsWith('http://youtu.be/') && !URL.startsWith('http://www.youtube.com/') && !URL.startsWith('https://www.youtube.com/') && !URL.startsWith('http://m.youtube.com/') && !URL.startsWirh('https://m.youtube.com/')) return alert("Warning: This unbaled youtube url!")
+    
+    if(getSelectedCheckboxValues('color') == 'mp4'){
+	  	window.location.href = `https://yt-music-installer.herokuapp.com/download?URL=${URL}&type=mp4`;
+	  } else {
+	  	window.location.href = `https://yt-music-installer.herokuapp.com/download?URL=${URL}&type=mp3`;
+	  }
 }
 
-function myFunction(URL) {
-  //alert("Warning: This unbaled youtube url!"+URL);
-
+function getSelectedCheckboxValues(name) {
+    const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+    let values = [];
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value);
+    });
+    return values;
 }
 
 </script>
