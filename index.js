@@ -31,6 +31,7 @@ app.get('/download', async (req,res) => {
     res.header('Content-Disposition', contentDisposition(mp3title));  
     ytdl(URL, {
       format: 'mp3',
+      quality: 'highestaudio',
       filter: 'audioonly'
     }).pipe(res);
   }else {
