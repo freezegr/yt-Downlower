@@ -73,13 +73,14 @@ app.get('/play', async (req,res) => {
     var a = new Audio(url);
     a.play()
 }
-  function (){
+   function fortest(){
     try {
      playSound(URL)
     }catch(err) {
       console.log(err)
     }
   }
+  fortest()
 
   /*async function info(){
     try {
