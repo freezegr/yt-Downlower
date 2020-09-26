@@ -32,7 +32,7 @@ app.get('/download', async (req,res) => {
       return res.send('ERR')
     }
   }
-  conelog.log(info())
+  console.log(info())
   /*let inform = {
     title: info().then(function(result){
       return result.title + '.mp3';
