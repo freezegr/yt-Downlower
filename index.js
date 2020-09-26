@@ -33,6 +33,7 @@ app.get('/download', async (req,res) => {
     }
   } 
   let inform = await info()
+  if(inform.title == undefined) return;
   //console.log(inform.title)
   if(type == 'mp3'){
     let mp3title = `${inform.title}.mp3`
