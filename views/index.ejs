@@ -62,9 +62,10 @@ window.onload = function (){
     if(error == 'falseType'){
       return alert('the url is unable');
     }else if(error == 'noType'){
-    return alert('The url is unable');
+      return alert('The url is unable');
+    }else if(error == 'falseVideo'){
+      return alert('this video does not exist'); 
     }
-    
   } catch {
   //some code 
   }
