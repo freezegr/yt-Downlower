@@ -21,8 +21,8 @@ app.get('/', (req, res) => {
 app.get('/download', async (req,res) => {
   var URL = req.query.URL;
   var type = req.query.type;
-  if(URL == undefined) return res.render('index')//res.send('<script>alert("The url is not true")</script>')
-  if(type == undefined) return //res.send('<script>alert("The url is not true")</script>')
+  if(URL == undefined) return //res.send('<script>alert("The url is not true")</script>')
+  if(type == undefined) return res.send('<script>alert("The url is not true")</script>')
 
   console.log(type)
   console.log(URL)
@@ -30,7 +30,7 @@ app.get('/download', async (req,res) => {
     try {
       return await ytdl.getInfo(URL);
     }catch(err) {
-      return res.send('ERR')
+      return res.render('index')
     }
   } 
   let inform = await info()
