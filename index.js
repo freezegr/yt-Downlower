@@ -25,7 +25,7 @@ app.get('/download', async (req,res) => {
   if(type == undefined) return res.send('<script>alert("The url is not true")</script>')
   console.log(type)
   console.log(URL)
-  let info = function (){
+  let info = async function (){
     try {
       return await ytdl.getInfo(URL);
     }catch(err) {
