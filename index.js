@@ -32,7 +32,9 @@ app.get('/download', async (req,res) => {
       return res.send('ERR')
     }
   }
-  console.log(info.then(function(result){console.log(result)))
+  console.log(info.then(function(result){
+    console.log(result)
+  })
   /*if(type == 'mp3'){
     let mp3title = `${info.title}.mp3`
     console.log(mp3title)
