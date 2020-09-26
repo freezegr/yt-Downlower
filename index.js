@@ -34,7 +34,7 @@ app.get('/download', async (req,res) => {
   }
   let inform = info().then(function(result){
     return result
-  }))
+  })
   console.log(inform.ttle)
   /*if(type == 'mp3'){
     let mp3title = `${inform.title}.mp3`
