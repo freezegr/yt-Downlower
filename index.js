@@ -56,3 +56,9 @@ app.get('/download', async (req,res) => {
     }).pipe(res)
   }
 });
+
+app.use(function(req, res){
+  res.status(404)
+  res.send('tets')
+});
+
