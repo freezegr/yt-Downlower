@@ -32,11 +32,12 @@ app.get('/download', async (req,res) => {
       return res.send('ERR')
     }
   }
-  console.log(info().then(function(result){
-    console.log(result)
+  let inform = info().then(function(result){
+    return result
   }))
+  console.log(inform.ttle)
   /*if(type == 'mp3'){
-    let mp3title = `${info.title}.mp3`
+    let mp3title = `${inform.title}.mp3`
     console.log(mp3title)
     res.header('Content-Disposition', contentDisposition(mp3title));  
     ytdl(URL, {
