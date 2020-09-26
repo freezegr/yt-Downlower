@@ -33,11 +33,7 @@ app.get('/download', async (req,res) => {
     }
   }
  
-  let inform = {
-    title: info().then(function(result){
-      return result.title + '.mp3';
-    })
-  }
+  let inform = await info()
   console.log(inform)
   /*if(type == 'mp3'){
     let mp3title = `${inform.title}.mp3`
