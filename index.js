@@ -39,7 +39,8 @@ app.get('/download', async (req,res) => {
     let mp4Title = `${info.title}.mp4`
     res.header('Content-Disposition', contentDisposition(mp4Title));
     ytdl(URL, {
-      form: 'mp4'
+      form: 'mp4',
+      quality: 'highestvideo'
     }).pipe(res)
   }
 });
