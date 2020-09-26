@@ -29,7 +29,7 @@ app.get('/download', async (req,res) => {
     try {
       return await ytdl.getInfo(URL);
     }catch(err) {
-      res.send('ERR')
+      return res.send('ERR')
     }
   }
   console.log(info())
