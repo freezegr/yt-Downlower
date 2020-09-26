@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.tag('/test', (req, res) => {
+app.get('/test', (req, res) => {
   res.render('play');
 
 });
