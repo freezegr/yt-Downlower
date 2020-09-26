@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html><head>
+  <title>YouTube Downloader</title>
+  <link rel="icon" 
+      type="image/png" 
+      href="https://wallpapercave.com/wp/wp5057287.jpg"
+  </link>
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+body {
+  background: url('https://wallpapercave.com/wp/wp5057287.jpg')no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+	* {
+    text-align: center;
+}
+.heading {
+    font-family: Arial;
+    margin-top:40vh;
+}
+.URL-input, .convert-button {
+    font-size:1.3em;
+    padding:5px 10px;
+}
+.URL-input {
+    border-radius:4px 0px 0px 4px;
+    width:30em;
+    text-align: left;
+    border:2px solid #EEEEEE;
+    background: #EEEEEE;
+    outline:none;
+}
+.URL-input:focus {
+    border:2px solid #0485ff;
+}
+.convert-button {
+    border-radius:0px 4px 4px 0px;
+    border:2px solid #0485ff;
+    background: #0485ff;
+    color:white;
+}
+.heading {
+  color: #42b6f5;
+  font-family: 'Tangerine', cursive;
+  font-size: 50px;
+  text-shadow: 1px 1px 3px black;
+}
+
+.buttonMp4 {
+  color: #42b6f5;
+  font-family: 'Tangerine', cursive;
+  text-shadow: 1px 1px 3px black;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  /* CSS Smooth Scroll */
+  overflow-y: scroll; 
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  color: #42b6f5;
+}
+
+.lead {
+  font-size: 1.5rem;
+  color: #42b6f5;
+}
+
+.navbar {
+	font-family: 'Lora', serif;
+	font-size: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  color: black; 
+  text-shadow: 1px 1px 3px black;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+  color: #42b6f5;
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+  padding: 1rem;
+  color: #42b6f5;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #f4f4f4;
+}
+
+.navbar ul li a:hover {
+  color: #42b6f5;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="navbar">
+      <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+</div>
+
+<h1 class="heading">Download your favorite music of youtube</h1>
+<input class="URL-input" placeholder="Video url example: https://www.youtube.com/watch?v=kdnKzJKJ">
+<button class="convert-button">Convert</button>
+<input class="buttonMp4" type="checkbox" name="color" value="mp4"> mp4
+
+<script>
+window.onload = function (){
+  try {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const error = urlParams.get('error')
+    if(error == undefined) return; 
+    if(error == 'falseType'){
+      return alert('the url is unable');
+    }else if(error == 'noType'){
+      return alert('The url is unable');
+    }else if(error == 'falseVideo'){
+      return alert('this video does not exist'); 
+    }
+  } catch {
+  //some code 
+  }
+}
+var convertBtn = document.querySelector('.convert-button');
+var URLinput = document.querySelector('.URL-input');
+convertBtn.addEventListener('click', () => {
+    console.log(`URL: ${URLinput.value}`);
+    sendURL(URLinput.value);
+});
+ 
+function sendURL(URL) {
+    
+    if(getSelectedCheckboxValues('color') == 'mp4'){
+	  	window.location.href = `https://yt-music-installer.herokuapp.com/play?URL=${URL}&type=mp4`;
+	  } else {
+	  	window.location.href = `https://yt-music-installer.herokuapp.com/play?URL=${URL}&type=mp3`;
+	  }
+}
+
+function getSelectedCheckboxValues(name) {
+    const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+    let values = [];
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value);
+    });
+    return values;
+}
+
+</script>
+</body>
+</html>
