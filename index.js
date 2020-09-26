@@ -59,6 +59,6 @@ app.get('/download', async (req,res) => {
 
 app.use(function(req, res){
   res.status(404)
-  res.send('tets')
+  res.render('404')
 });
 
