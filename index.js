@@ -30,7 +30,8 @@ app.get('/download', async (req,res) => {
     try {
       return await ytdl.getInfo(URL);
     }catch(err) {
-      return res.render('index')
+      res.render('index')
+      return res.send('<script>alert("The url is not true")</script>')
     }
   } 
   let inform = await info()
