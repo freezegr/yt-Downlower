@@ -25,10 +25,13 @@ app.get('/download', async (req,res) => {
   if(type == undefined) return res.send('<script>alert("The url is not true")</script>')
   console.log(type)
   console.log(URL)
-  let info = try {
-    await ytdl.getInfo(URL);
-  }catch(err) {
-    res.send('ERR')
+  let info = function (){
+    try {
+      let infor = await ytdl.getInfo(URL);
+    }catch(err) {
+      res.send('ERR')
+    }
+    return infor;
   }
   console.log(info.title)
   if(type == 'mp3'){
