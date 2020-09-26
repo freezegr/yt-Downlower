@@ -33,7 +33,7 @@ app.get('/download', async (req,res) => {
     }
   }
   let inform = info().then((result)=>{
-    rerurn result.title + '.mp3'
+    return result.title + '.mp3'
   })
   console.log(inform())
   /*if(type == 'mp3'){
