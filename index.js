@@ -31,11 +31,10 @@ app.get('/download', async (req,res) => {
     }catch(err) {
       return res.send('ERR')
     }
-  }
- 
+  } 
   let inform = await info()
-  console.log(inform.title)
-  /*if(type == 'mp3'){
+  //console.log(inform.title)
+  if(type == 'mp3'){
     let mp3title = `${inform.title}.mp3`
     console.log(mp3title)
     res.header('Content-Disposition', contentDisposition(mp3title));  
@@ -46,11 +45,11 @@ app.get('/download', async (req,res) => {
     }).pipe(res);
 
   }else {
-    let mp4Title = `${info.title}.mp4`
+    let mp4Title = `${inform.title}.mp4`
     res.header('Content-Disposition', contentDisposition(mp4Title));
     ytdl(URL, {
       form: 'mp4',
       quality: 'highestvideo'
     }).pipe(res)
-  }*/
+  }
 });
