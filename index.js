@@ -32,7 +32,7 @@ app.get('/download', async (req,res) => {
       return res.send('ERR')
     }
   }
-  let inform = info().then(function(result)=>{
+  let inform = info().then((result)=>{
     return result.title
   })
   console.log(inform)
