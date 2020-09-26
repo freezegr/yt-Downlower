@@ -72,7 +72,7 @@ app.get('/play', async (req,res) => {
   function playSound(url) {
     var a = new Audio(url);
     a.play()
-}
+  }
    function fortest(){
     try {
      playSound(URL)
