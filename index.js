@@ -32,8 +32,8 @@ app.get('/download', async (req,res) => {
       return res.send('ERR')
     }
   }
-  console.log(info().title)
-  if(type == 'mp3'){
+  console.log('info '+info())
+  /*if(type == 'mp3'){
     let mp3title = `${info.title}.mp3`
     console.log(mp3title)
     res.header('Content-Disposition', contentDisposition(mp3title));  
@@ -50,5 +50,5 @@ app.get('/download', async (req,res) => {
       form: 'mp4',
       quality: 'highestvideo'
     }).pipe(res)
-  }
+  }*/
 });
