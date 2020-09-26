@@ -27,11 +27,10 @@ app.get('/download', async (req,res) => {
   console.log(URL)
   let info = function (){
     try {
-      let infor = await ytdl.getInfo(URL);
+      return await ytdl.getInfo(URL);
     }catch(err) {
       res.send('ERR')
     }
-    return infor;
   }
   console.log(info.title)
   if(type == 'mp3'){
