@@ -16,9 +16,6 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => { 
   res.render('index')
-  let error = req.query.error
-  if(error == 'noType') res.send('<script>alert("The url is not true")</script>')
-  if(error == 'falseType') res.send('<script>alert("The url is not true")</script>')
 })
 
 app.get('/download', async (req,res) => {
@@ -33,8 +30,7 @@ app.get('/download', async (req,res) => {
     try {
       return await ytdl.getInfo(URL);
     }catch(err) {
-      res.render('index')
-      return res.send('<script>alert("The url is not true")</script>')
+      return res.redirect('https://yt-music-installer.herokuapp.com/?error=falseVideo');
     }
   } 
   let inform = await info()
