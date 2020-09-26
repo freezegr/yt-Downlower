@@ -16,14 +16,17 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => { 
   res.render('index')
+  let error = req.query.error
+  if(error == 'noType') res.send('<script>alert("The url is not true")</script>')
+  if(error == 'falseType') res.send('<script>alert("The url is not true")</script>')
 })
 
 app.get('/download', async (req,res) => {
   var URL = req.query.URL;
   var type = req.query.type;
   if(URL == undefined) return res.send('<script>alert("The url is not true")</script>')
-  if(type == undefined) return res.send('<script>alert("The url is not true")</script>')
-
+  if(type == undefined) return res.redirect('https://yt-music-installer.herokuapp.com/?error=noType');
+  if(type != 'mp3' && type != 'mp4') return res.redirect('https://yt-music-installer.herokuapp.com/?error=falseType');
   console.log(type)
   console.log(URL)
   async function info(){
