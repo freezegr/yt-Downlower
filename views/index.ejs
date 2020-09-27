@@ -131,30 +131,7 @@ body {
 <h2 id="videoTitle"></h2>
 
 <script>
-window.onload = function (){
-  try {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const error = urlParams.get('error')
-    const url = urlParams.get('url')
-    if(url == undefined){
-      return
-    }else {
-      videoTitle()
-      return setUrl(url) 
-    }
-    if(error == undefined) return; 
-    if(error == 'falseType'){
-      return alert('the url is unable');
-    }else if(error == 'noType'){
-      return alert('The url is unable');
-    }else if(error == 'falseVideo'){
-      return alert('this video does not exist'); 
-    }
-  } catch {
-  //some code 
-  }
-}
+
 var convertBtn = document.querySelector('.convert-button');
 var URLinput = document.querySelector('.URL-input');
 convertBtn.addEventListener('click', () => {
@@ -198,6 +175,31 @@ function videoTitle(){
   if(titleen == undefined) return alert('undefined');
   const title = decodeURIComponent(titleen)
   document.getElementById("videoTitle").innerHTML = title
+}
+
+window.onload = function (){
+  try {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const error = urlParams.get('error')
+    const url = urlParams.get('url')
+    if(url == undefined){
+      return
+    }else {
+      videoTitle()
+      return setUrl(url) 
+    }
+    if(error == undefined) return; 
+    if(error == 'falseType'){
+      return alert('the url is unable');
+    }else if(error == 'noType'){
+      return alert('The url is unable');
+    }else if(error == 'falseVideo'){
+      return alert('this video does not exist'); 
+    }
+  } catch {
+  //some code 
+  }
 }
 
 </script>
