@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
   <title>YouTube Downloader</title>
   <link rel="icon" 
       type="image/png" 
@@ -115,8 +116,8 @@ body {
 <div class="container">
   <nav class="navbar">
       <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="#about">Search</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="search">Search</a></li>
           <li><a href="#service">play</a></li>
           <li><a href="#contact">developer</a></li>
         </ul>
@@ -134,6 +135,8 @@ window.onload = function (){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const error = urlParams.get('error')
+    const url = urlParams.get('url')
+    if(url != undefined) return setUrl(url)    
     if(error == undefined) return; 
     if(error == 'falseType'){
       return alert('the url is unable');
@@ -170,6 +173,15 @@ function getSelectedCheckboxValues(name) {
         values.push(checkbox.value);
     });
     return values;
+}
+
+function setUrl(url){
+	var URLinput = document.querySelector('.URL-input');
+  (() => {
+    URLinput.setAttribute("type", "text");
+    URLinput.setAttribute("value", url);
+    document.body.appendChild(URLinput);
+  });
 }
 
 </script>
