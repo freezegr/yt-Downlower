@@ -128,6 +128,7 @@ body {
 <input class="URL-input" placeholder="Video url example: https://www.youtube.com/watch?v=kdnKzJKJ">
 <button class="convert-button">Convert</button>
 <input class="buttonMp4" type="checkbox" name="color" value="mp4"> mp4
+<h2 class="videoTitle"></h2>
 
 <script>
 window.onload = function (){
@@ -186,6 +187,19 @@ function setUrl(url){
     URLinput.setAttribute("value", url);
     document.body.appendChild(URLinput);
 
+}
+
+funcrion videoTitle(){
+  const queryString = window.location.search;
+
+    const urlParams = new URLSearchParams(queryString);
+
+    const error = urlParams.get('error')
+
+    const url = urlParams.get('url')
+  var uri_dec = decodeURIComponent(uri_enc);
+  var res = "Encoded URI: " + uri_enc + "<br>" + "Decoded URI: " + uri_dec;
+  document
 }
 
 </script>
