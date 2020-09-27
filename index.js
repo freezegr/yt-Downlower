@@ -101,7 +101,7 @@ app.get('/play', async (req,res) => {
 
 
 app.use(function(req, res){
-  res.status(404)
-  res.render('404')
+  res.status(404).render('404') 
+  res.status(400).render('400');
 });
 
