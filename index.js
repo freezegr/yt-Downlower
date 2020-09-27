@@ -31,7 +31,7 @@ app.get('/search', (req, res) => {
 
 app.get('/api/search', async (req, res) => {
   const linkUrl = req.query.url;
-  if(linkUrl == undefined) return res.json({"timestamp": new Date(), "path": "/api/search/", "status": "405", "error" : "Method Not Allowed", "message": "no url parameter"})
+  if(linkUrl == undefined) return res.end(JSON.stringify({"timestamp": new Date(), "path": "/api/search/", "status": "405", "error" : "Method Not Allowed", "message": "no url parameter"}))
   const response = await ytsr(linkUrl).catch(error=>{
     return res.redirect('https://yt-music-installer.herokuapp.com/search?error=noResult');
   })
