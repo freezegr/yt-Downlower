@@ -135,7 +135,7 @@ window.onload = function (){
     const urlParams = new URLSearchParams(queryString);
     const error = urlParams.get('error')
     const videoURL = urlParams.geta('URL')
-    if(videoURL != unrefined) return playVideo(videoURL)
+    if(videoURL) return playVideo(videoURL)
     if(error == undefined) return; 
     if(error == 'falseType'){
       return alert('the url is unable');
