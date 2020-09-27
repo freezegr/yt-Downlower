@@ -186,20 +186,17 @@ function setUrl(url){
     URLinput.setAttribute("type", "text");
     URLinput.setAttribute("value", url);
     document.body.appendChild(URLinput);
+    videoTitle()
 
 }
 
-funcrion videoTitle(){
+function videoTitle(){
   const queryString = window.location.search;
-
-    const urlParams = new URLSearchParams(queryString);
-
-    const error = urlParams.get('error')
-
-    const url = urlParams.get('url')
-  var uri_dec = decodeURIComponent(uri_enc);
-  var res = "Encoded URI: " + uri_enc + "<br>" + "Decoded URI: " + uri_dec;
-  document
+  const urlParams = new URLSearchParams(queryString);
+  const titleen = urlParams.get('title')  
+  if(titleen == undefined) return
+  const title = decodeURIComponent(titleen)
+  document.getElementsByClassName("videoTitle").innerHTML = title
 }
 
 </script>
