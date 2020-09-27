@@ -128,7 +128,7 @@ body {
 <input class="URL-input" placeholder="Video url example: https://www.youtube.com/watch?v=kdnKzJKJ">
 <button class="convert-button">Convert</button>
 <input class="buttonMp4" type="checkbox" name="color" value="mp4"> mp4
-<h2 class="videoTitle"></h2>
+<h2 id="videoTitle"></h2>
 
 <script>
 window.onload = function (){
@@ -197,7 +197,7 @@ function videoTitle(){
   if(titleen == undefined) return alert('undefined');
   const title = decodeURIComponent(titleen)
   alert(title)
-  document.getElementsByClassName("videoTitle").innerHTML = title
+  document.getElementById("videoTitle").innerHTML = title
 }
 
 </script>
