@@ -194,7 +194,7 @@ function videoTitle(){
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const titleen = urlParams.get('title')  
-  if(titleen == undefined) return
+  if(titleen == undefined) return alert('undefined');
   const title = decodeURIComponent(titleen)
   document.getElementsByClassName("videoTitle").innerHTML = title
 }
