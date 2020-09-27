@@ -69,22 +69,6 @@ app.get('/play', async (req,res) => {
   if(type != 'mp3' && type != 'mp4') return res.redirect('https://yt-music-installer.herokuapp.com/?error=falseType');
   console.log(type)
   console.log(URL)
-  res.send('<script>
-    function playSound(url) {
-    var a = new Audio(url);
-    a.play()
-  }
-   function fortest(){
-    try {
-     playSound(URL)
-    }catch(err) {
-      console.log(err)
-    }
-  }
-  fortest()
-  </script>')
-  
-
   /*async function info(){
     try {
       return await ytdl.getInfo(URL);
