@@ -43,7 +43,7 @@ app.get('/api/search', async (res, req) => {
   res.redirect("https://yt-music-installer.herokuapp.com/"+`?url=${song.url}&title=${song.title}`)
 });
 
-app.gapp.get('/search')et('/download', async (req,res) => {
+app.get('/download', async (req,res) => {
   const URL = req.query.URL;
   const type = req.query.type;
   if(URL == undefined) return res.send('<script>alert("The url is not true")</script>')
