@@ -144,7 +144,7 @@ convertBtn.addEventListener('click', () => {
 });
  
 function sendURL(URL) {
-  /*if(URL.length == 50)*/ return alert(`Warning: Please search! ${URL} `)
+  if(URL.length == 0) return alert(`Warning: Please search!`)
 	window.location.href = `https://yt-music-installer.herokuapp.com/api/search?url=${URL}`;
 }
 
