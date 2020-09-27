@@ -186,7 +186,7 @@ function setUrl(url){
     URLinput.setAttribute("type", "text");
     URLinput.setAttribute("value", url);
     document.body.appendChild(URLinput);
-    videoTitle()
+
 
 }
 
@@ -196,7 +196,6 @@ function videoTitle(){
   const titleen = urlParams.get('title')  
   if(titleen == undefined) return alert('undefined');
   const title = decodeURIComponent(titleen)
-  alert(title)
   document.getElementById("videoTitle").innerHTML = title
 }
 
