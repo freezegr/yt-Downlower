@@ -28,8 +28,8 @@ app.get('/search', (req, res) => {
   res.render('search');
 });
 
-app.get('/api/search', async (res, req) => {
-  const linkUrl = req.query
+app.get('/api/search', async (req, res) => {
+  const linkUrl = req.query.url;
   console.log(linkUrl)
   const response = await ytsr(linkUrl).catch(error=>{
     return res.redirect('https://yt-music-installer.herokuapp.com/search?error=noResult');
