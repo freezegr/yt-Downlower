@@ -30,10 +30,10 @@ app.get('/search', (req, res) => {
 
 app.get('/api/search', async (res, req) => {
   const url = req.query.url;
-  const res = await ytsr(url).catch(error=>{
+  const response = await ytsr(url).catch(error=>{
     return res.redirect('https://yt-music-installer.herokuapp.com/search?error=noResult');
   })
-  let theVideo = res.items.filter(i=>i.type == 'video')[0]
+  let theVideo = response.items.filter(i=>i.type == 'video')[0]
   if(!theVideo) return res.redirect('https://yt-music-installer.herokuapp.com/search?error=noResult')
   
   const song = {
