@@ -134,6 +134,8 @@ window.onload = function (){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const error = urlParams.get('error')
+    const videoURL = urlParams.geta('URL')
+    if(videoURL != unrefined) return playVideo(videoURL)
     if(error == undefined) return; 
     if(error == 'falseType'){
       return alert('the url is unable');
@@ -156,7 +158,7 @@ convertBtn.addEventListener('click', () => {
 function sendURL(URL) {
     
     if(getSelectedCheckboxValues('color') == 'mp4'){
-	  	window.location.href = `https://yt-music-installer.herokuapp.com/play?URL=${URL}&type=mp4`;
+	  	window.location.href = `https://yt-music-installer.herokuapp.com/test?URL=${URL}&type=mp4`;
 	  } else {
 	  	window.location.href = `https://yt-music-installer.herokuapp.com/play?URL=${URL}&type=mp3`;
 	  }
