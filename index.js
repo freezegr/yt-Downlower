@@ -68,7 +68,7 @@ app.get('/download', async (req,res) => {
     console.log(mp3title)
     res.set({
       "Content-Type": "audio/mpeg",
-      'Content-Disposition': contentDisposition(mp3title))
+      'Content-Disposition': contentDisposition(mp3title)
     });  
     console.log(res.get('Content-Type'))
     ytdl(URL, {
