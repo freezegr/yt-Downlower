@@ -66,8 +66,10 @@ app.get('/download', async (req,res) => {
   if(type == 'mp3'){
     let mp3title = `${inform.title}.mp3`
     console.log(mp3title)
-    res.setHeader("Content-Type: audio/mpeg");
-    res.setHeader('Content-Disposition', contentDisposition(mp3title));  
+    res.set({
+      "Content-Type: audio/mpeg",
+      'Content-Disposition', contentDisposition(mp3title))
+    });  
     console.log(res)
     ytdl(URL, {
       format: 'mp3',
