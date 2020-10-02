@@ -71,7 +71,7 @@ app.get('/download', async (req,res) => {
       format: 'mp3',
       quality: 'highestaudio',
       filter: 'audioonly'
-    }).pipe(fs.createWriteStream('./Download/'+mp3title));
+    }).pipe(fs.createWriteStream(mp3title));
 
   }else {
     let mp4Title = `${inform.title}.mp4`
