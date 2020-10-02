@@ -66,12 +66,13 @@ app.get('/download', async (req,res) => {
   if(type == 'mp3'){
     let mp3title = `${inform.title}.mp3`
     console.log(mp3title)
-    //res.header('Content-Disposition', contentDisposition(mp3title));  
+    res.header("Content-Type: audio/mpeg");
+    res.header('Content-Disposition', contentDisposition(mp3title));  
     ytdl(URL, {
       format: 'mp3',
       quality: 'highestaudio',
       filter: 'audioonly'
-    }).pipe(fs.createWriteStream(mp3title));
+    }).pipe(res);
 
   }else {
     let mp4Title = `${inform.title}.mp4`
